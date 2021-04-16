@@ -1,5 +1,6 @@
-package com.company;
+package com.company.controller;
 
+import com.company.controller.IndexController;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

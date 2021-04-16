@@ -1,4 +1,4 @@
-package com.company;
+package com.company.controller;
 
 import com.company.entity.Student;
 import com.company.repository.StudentRepository;
