@@ -2,11 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f73f49c-ba69-4b9b-9924-e622ac15beb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/repository/StudentRepositoryCustom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/repository/impl/StudentRepositoryCustomImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/controller/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/dto/LoginDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/dto/StudentDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/exception/ValidationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/exception/base/ApiExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/exception/base/GlobalExceptionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/response/VehicleTaggingResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/response/base/ApiResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/response/base/ArrayResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/response/base/ErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/response/base/Pagination.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/response/base/SuccessResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/response/base/UnAuthorizeResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/validation/CustomValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/repository/StudentRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +130,7 @@
       <workItem from="1618461368979" duration="5266000" />
       <workItem from="1618557881758" duration="1351000" />
       <workItem from="1618559248495" duration="5990000" />
-      <workItem from="1618565256308" duration="1913000" />
+      <workItem from="1618565256308" duration="4567000" />
     </task>
     <task id="LOCAL-00001" summary="liquibase added">
       <created>1618565145099</created>
@@ -135,17 +146,27 @@
       <option name="project" value="LOCAL" />
       <updated>1618565982435</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Custom repository added added">
+      <created>1618567355237</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1618567355237</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="liquibase added" />
     <MESSAGE value="Seed added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Seed added" />
+    <MESSAGE value="Custom repository added added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Custom repository added added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="575" y="376" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1618559655762">
@@ -164,46 +185,46 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="749" y="413" width="494" height="299" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/72.27.1848.1053@72.27.1848.1053" timestamp="1618566214913" />
-    <state x="508" y="125" width="966" height="863" key="CommitChangelistDialog2" timestamp="1618565982344">
+    <state x="508" y="125" width="966" height="863" key="CommitChangelistDialog2" timestamp="1618567355194">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="508" y="125" width="966" height="863" key="CommitChangelistDialog2/72.27.1848.1053@72.27.1848.1053" timestamp="1618565982344" />
+    <state x="508" y="125" width="966" height="863" key="CommitChangelistDialog2/72.27.1848.1053@72.27.1848.1053" timestamp="1618567355194" />
     <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1618561272859">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1618561272859" />
-    <state width="1802" height="330" key="GridCell.Tab.0.bottom" timestamp="1618567280788">
+    <state width="1802" height="330" key="GridCell.Tab.0.bottom" timestamp="1618570006076">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="330" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1618567280788" />
-    <state width="1802" height="330" key="GridCell.Tab.0.center" timestamp="1618567280788">
+    <state width="1802" height="330" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1618570006076" />
+    <state width="1802" height="330" key="GridCell.Tab.0.center" timestamp="1618570006075">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="330" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1618567280788" />
-    <state width="1802" height="330" key="GridCell.Tab.0.left" timestamp="1618567280788">
+    <state width="1802" height="330" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1618570006075" />
+    <state width="1802" height="330" key="GridCell.Tab.0.left" timestamp="1618570006075">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="330" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1618567280788" />
-    <state width="1802" height="330" key="GridCell.Tab.0.right" timestamp="1618567280788">
+    <state width="1802" height="330" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1618570006075" />
+    <state width="1802" height="330" key="GridCell.Tab.0.right" timestamp="1618570006075">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="330" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1618567280788" />
-    <state width="1802" height="330" key="GridCell.Tab.1.bottom" timestamp="1618567280676">
+    <state width="1802" height="330" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1618570006075" />
+    <state width="1802" height="330" key="GridCell.Tab.1.bottom" timestamp="1618570005982">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="330" key="GridCell.Tab.1.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1618567280676" />
-    <state width="1802" height="330" key="GridCell.Tab.1.center" timestamp="1618567280675">
+    <state width="1802" height="330" key="GridCell.Tab.1.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1618570005982" />
+    <state width="1802" height="330" key="GridCell.Tab.1.center" timestamp="1618570005981">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="330" key="GridCell.Tab.1.center/72.27.1848.1053@72.27.1848.1053" timestamp="1618567280675" />
-    <state width="1802" height="330" key="GridCell.Tab.1.left" timestamp="1618567280675">
+    <state width="1802" height="330" key="GridCell.Tab.1.center/72.27.1848.1053@72.27.1848.1053" timestamp="1618570005981" />
+    <state width="1802" height="330" key="GridCell.Tab.1.left" timestamp="1618570005981">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="330" key="GridCell.Tab.1.left/72.27.1848.1053@72.27.1848.1053" timestamp="1618567280675" />
-    <state width="1802" height="330" key="GridCell.Tab.1.right" timestamp="1618567280676">
+    <state width="1802" height="330" key="GridCell.Tab.1.left/72.27.1848.1053@72.27.1848.1053" timestamp="1618570005981" />
+    <state width="1802" height="330" key="GridCell.Tab.1.right" timestamp="1618570005981">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="330" key="GridCell.Tab.1.right/72.27.1848.1053@72.27.1848.1053" timestamp="1618567280676" />
+    <state width="1802" height="330" key="GridCell.Tab.1.right/72.27.1848.1053@72.27.1848.1053" timestamp="1618570005981" />
     <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1618565239791">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
