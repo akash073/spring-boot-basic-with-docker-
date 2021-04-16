@@ -27,6 +27,9 @@ public class IndexController {
 
         List<Student> studentList = studentRepository.findAll();
 
+        List<Student> students = studentRepository.getStudentsByHql();
+        System.out.println(students);
+
 
         return "index";
     }
