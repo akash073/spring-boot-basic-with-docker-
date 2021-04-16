@@ -16,18 +16,12 @@ import java.io.Serializable;
  */
 
 public class ErrorResponse extends ApiResponse implements Serializable {
-    private Object data;
+   // private Object data;
     public ErrorResponse(HttpStatus httpStatus, String message){
         super(false);
         super.status = httpStatus.value();
         super.message = message;
-        this.data = null;
-    }
-    public Object getData() {
-        return data;
+        //this.data = null;
     }
 
-    public void setData(Object data) {
-        this.data = data;
-    }
 }
