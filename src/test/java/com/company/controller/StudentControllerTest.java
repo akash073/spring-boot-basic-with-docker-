@@ -1,10 +1,11 @@
 package com.company.controller;
 
+
 import com.company.Main;
 import com.company.entity.Student;
 import com.company.repository.StudentRepository;
 import com.company.validation.CustomValidator;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.modelmapper.ModelMapper;
@@ -12,8 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -26,11 +27,10 @@ import java.util.Optional;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes=Main.class)
+@ContextConfiguration(classes= Main.class)
 @WebMvcTest(StudentController.class)
-@ActiveProfiles("test")
+@TestPropertySource(locations = {"classpath:application-test.properties"})
 public class StudentControllerTest {
 
 
@@ -97,3 +97,4 @@ public class StudentControllerTest {
 
 
 }
+

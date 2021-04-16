@@ -4,58 +4,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>spring-boot-docker</groupId>
-    <artifactId>spring-boot-docker</artifactId>
-    <name>spring-boot-docker</name>
-    <version>1.0</version>
 
-    <packaging>jar</packaging>
+    <name>Springboot</name>
+    <groupId>org.springframework</groupId>
+    <artifactId>gs-spring-boot</artifactId>
+    <version>0.1.0</version>
 
-
+    <packaging>war</packaging>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.4.4</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-        <!--optional below but good practice to specify our java version-->
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-
-        <hibernate.version>5.4.4.Final</hibernate.version>
-        <gson.version>5.4.4.Final</gson.version>
-
-
-        <start-class>com.company.Main</start-class>
-
-        <!--Database-->
-        <mysql-connector.version>8.0.22</mysql-connector.version>
-        <hibernate.version>5.4.4.Final</hibernate.version>
-
-        <!--Login-->
-        <log4j.version>2.13.3</log4j.version>
-
-        <!--Test-->
-        <junit.version>4.12</junit.version>
-        <junit-jupiter.version>5.4.0</junit-jupiter.version>
-        <version.legacy.junit>4.13</version.legacy.junit>
-
-
-    </properties>
 
     <dependencies>
 
-        <!--General-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -68,38 +32,60 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
         </dependency>
 
-        <!--Database connectivity-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>log4j-to-slf4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>${hibernate.version}</version>
-        </dependency>
 
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>${hibernate.version}</version>
-        </dependency>
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql-connector.version}</version>
+            <version>8.0.22</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.0.1</version>
         </dependency>
 
         <dependency>
-            <groupId>org.liquibase</groupId>
-            <artifactId>liquibase-core</artifactId>
-
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5</version>
         </dependency>
 
-        <!--Utility eg.Lombok , model mapper , Gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.5</version>
+        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -110,11 +96,31 @@
             <artifactId>modelmapper-spring</artifactId>
             <version>2.3.0</version>
         </dependency>
+
         <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.8.0</version>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
 
         <!--Swagger-->
         <dependency>
@@ -148,29 +154,11 @@
             <version>20.0</version>
         </dependency>
 
-        <!--Logging-->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>${log4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>${log4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-slf4j-impl</artifactId>
-            <version>${log4j.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-
         <!--Test-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -178,18 +166,15 @@
             <artifactId>junit-jupiter-api</artifactId>
             <scope>test</scope>
         </dependency>
-
-
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.3.1</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+
             <scope>test</scope>
             <exclusions>
                 <exclusion>
@@ -202,105 +187,32 @@
 
     </dependencies>
 
-    <profiles>
-        <!--Local environment-->
-        <profile>
-            <id>local</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <profileActive>local</profileActive>
-                <logging.location>C:/apache-tomcat-9.0.21/logs</logging.location>
-                <deploymentUrl>http://localhost:8888/manager/text</deploymentUrl>
-            </properties>
-        </profile>
+    <properties>
+        <java.version>1.8</java.version>
 
-        <!--Dev environment-->
-        <profile>
-            <id>dev</id>
-            <properties>
-                <profileActive>dev</profileActive>
-                <logging.location>/tomcat-9.0.22/logs</logging.location>
-                <!--http://192.168.78.11:8080/manager/text-->
-                <deploymentUrl>http://192.168.78.11:8080/manager/text</deploymentUrl>
-            </properties>
-        </profile>
-        <!--Test environment-->
-        <profile>
-            <id>test</id>
-            <properties>
-                <profileActive>test</profileActive>
-                <message>Test environment</message>
-                <logging.location>D:</logging.location>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-            </properties>
-        </profile>
-    </profiles>
+        <log4j.version>2.13.3</log4j.version>
+        <junit-jupiter.version>5.4.0</junit-jupiter.version>
+        <version.legacy.junit>4.13</version.legacy.junit>
+    </properties>
+
 
     <build>
         <finalName>${project.name}</finalName>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-
         <plugins>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-
-                <configuration>
-                    <skipTests>false</skipTests>
-                </configuration>
-
-
-            </plugin>
-
-
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.6.0</version>
-                <executions>
-                    <execution>
-                        <id>docker-build</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>docker-compose</executable>
-                            <workingDirectory>${project.basedir}</workingDirectory>
-                            <arguments>
-                                <argument>build</argument>
-                            </arguments>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <!-- <url>http://192.168.78.11:8080/manager/text</url>-->
-                    <url>${deploymentUrl}</url>
+                    <url>http://localhost:8080/manager/text</url>
                     <server>TomcatServer</server>
                     <path>/${project.name}</path>
-                    <update>true</update>
                 </configuration>
             </plugin>
 
-            <!--Test-->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
@@ -320,10 +232,14 @@
                     </execution>
                 </executions>
             </plugin>
-
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
 
         </plugins>
-    </build>
 
+
+    </build>
 
 </project>
