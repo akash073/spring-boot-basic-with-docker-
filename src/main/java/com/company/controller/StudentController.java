@@ -49,19 +49,49 @@ public class StudentController {
     @RequestMapping(path = "/save",method = RequestMethod.POST)
     public SuccessResponse<Student> save(@RequestBody StudentDto studentDto) {
 
+        Integer studentId = studentDto.getId();
+
+
+        String name = studentDto.getName();
+        if(customValidator.nullOrEmpty(name)){
+            throw new ValidationException("Name is empty");
+        }
+
+        String mobileNumber = studentDto.getMobile();
+        if(!customValidator.mobileValidate(mobileNumber)){
+            throw new ValidationException("Mobile number is invalid");
+        }
+
+        String email = studentDto.getEmail();
+        if(!customValidator.emailValidate(email)){
+            throw new ValidationException("Email is invalid");
+        }
 
         Student student = modelMapper.map(studentDto,Student.class);
 
-        return new SuccessResponse<>(student,"Student created successfully");
+        Student savedStudent = studentRepository.save(student);
+
+        return new SuccessResponse<>(savedStudent,"Student created successfully");
     }
 
     @RequestMapping(path = "/update",method = RequestMethod.PUT)
     public SuccessResponse<Student> update(@RequestBody StudentDto studentDto) {
 
+        Integer studentId = studentDto.getId();
 
-        Student student = modelMapper.map(studentDto,Student.class);
+        if(studentId == null || studentId == 0){
+            throw new ValidationException("StudentId can not be null");
+        }
 
-        return new SuccessResponse<>(student,"Student created successfully");
+        studentRepository.findById(studentId)
+                .orElseThrow(() -> new ValidationException(String.format("Student Id %s Not found",studentId) ));
+
+        Student updatedStudent = modelMapper.map(studentDto,Student.class);
+
+        studentRepository.save(updatedStudent);
+
+
+        return new SuccessResponse<>(updatedStudent,"Student created successfully");
     }
 
     @RequestMapping(path = "/student-by-id/{studentId}",method = RequestMethod.DELETE)

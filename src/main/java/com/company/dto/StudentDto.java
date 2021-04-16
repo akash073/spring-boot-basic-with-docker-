@@ -9,6 +9,7 @@ import java.io.Serializable;
 @Data
 public class StudentDto implements Serializable {
 
+    private Integer id;
     @ApiModelProperty(example = "akash")
     private String name;
     @ApiModelProperty(example = "01719461643")

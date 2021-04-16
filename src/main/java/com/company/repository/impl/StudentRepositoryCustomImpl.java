@@ -10,7 +10,6 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
-@Transactional
 public class StudentRepositoryCustomImpl implements StudentRepositoryCustom {
 
     @PersistenceContext
