@@ -1,0 +1,1 @@
+INSERT INTO student (id, email, mobile, name) VALUES (1, 'akash073@gmail.com', '01719461643', 'Akash');
