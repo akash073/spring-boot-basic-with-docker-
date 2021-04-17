@@ -198,6 +198,41 @@
         <junit-jupiter.version>5.7.0</junit-jupiter.version>
     </properties>
 
+    <profiles>
+        <!--Local environment-->
+        <profile>
+            <id>local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <profileActive>local</profileActive>
+                <logging.location>/logs-local</logging.location>
+                <deploymentUrl>http://localhost:8888/manager/text</deploymentUrl>
+            </properties>
+        </profile>
+
+        <!--Dev environment-->
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profileActive>dev</profileActive>
+                <logging.location>/logs-dev</logging.location>
+                <!--http://192.168.78.11:8080/manager/text-->
+                <deploymentUrl>http://192.168.78.11:8080/manager/text</deploymentUrl>
+            </properties>
+        </profile>
+        <!--Test environment-->
+        <profile>
+            <id>test</id>
+            <properties>
+                <profileActive>test</profileActive>
+                <message>Test environment</message>
+                <logging.location>logs-test</logging.location>
+
+            </properties>
+        </profile>
+    </profiles>
 
     <build>
         <finalName>${project.name}</finalName>

@@ -24,7 +24,7 @@ import java.util.Optional;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-//@RunWith(SpringRunner.class)
+
 @ContextConfiguration(classes= Main.class)
 @WebMvcTest(StudentController.class)
 @TestPropertySource(locations = {"classpath:application-test.properties"})
