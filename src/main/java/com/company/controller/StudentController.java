@@ -1,5 +1,6 @@
 package com.company.controller;
 
+import com.company.constant.MessageEnum;
 import com.company.dto.StudentDto;
 import com.company.entity.Student;
 import com.company.exception.ValidationException;
@@ -35,7 +36,7 @@ public class StudentController {
 
         List<Student> students = studentRepository.getStudentsByHql();
 
-        return new ArrayResponse("students",students,"List fetched successfully");
+        return new ArrayResponse("students",students,MessageEnum.LIST_FETCHED_SUCCESSFULLY.getValue());
     }
 
     @RequestMapping(path = "/student-by-id/{studentId}",method = RequestMethod.GET)
@@ -43,7 +44,7 @@ public class StudentController {
         Student student = studentRepository.findById(studentId)
                 .orElseThrow(() -> new ValidationException(String.format("Student Id %s Not found",studentId) ));
 
-        return new SuccessResponse<>(student,"Student fetched successfully");
+        return new SuccessResponse<>(student, MessageEnum.OBJECT_FETCHED_SUCCESSFULLY.getValue());
     }
 
     @RequestMapping(path = "/save",method = RequestMethod.POST)
@@ -71,7 +72,7 @@ public class StudentController {
 
         Student savedStudent = studentRepository.save(student);
 
-        return new SuccessResponse<>(savedStudent,"Student created successfully");
+        return new SuccessResponse<>(savedStudent,MessageEnum.SAVE_SUCCESSFULLY.getValue());
     }
 
     @RequestMapping(path = "/update",method = RequestMethod.PUT)
@@ -91,7 +92,7 @@ public class StudentController {
         studentRepository.save(updatedStudent);
 
 
-        return new SuccessResponse<>(updatedStudent,"Student created successfully");
+        return new SuccessResponse<>(updatedStudent,MessageEnum.UPDATE_SUCCESSFULLY.getValue());
     }
 
     @RequestMapping(path = "/student-by-id/{studentId}",method = RequestMethod.DELETE)
@@ -100,7 +101,7 @@ public class StudentController {
                 .orElseThrow(() -> new ValidationException(String.format("Student Id %s Not found",studentId) ));
 
         studentRepository.delete(student);
-        return new SuccessResponse<>(student,"Student fetched successfully");
+        return new SuccessResponse<>(student,MessageEnum.DELETED_SUCCESSFULLY.getValue());
     }
 
 }

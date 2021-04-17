@@ -6,7 +6,6 @@ import com.company.entity.Student;
 import com.company.repository.StudentRepository;
 import com.company.validation.CustomValidator;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
@@ -24,10 +22,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@RunWith(SpringRunner.class)
+//@RunWith(SpringRunner.class)
 @ContextConfiguration(classes= Main.class)
 @WebMvcTest(StudentController.class)
 @TestPropertySource(locations = {"classpath:application-test.properties"})
@@ -68,7 +65,7 @@ public class StudentControllerTest {
         mockMvc.perform( MockMvcRequestBuilders
                 .get("/student/list")
                 .accept(MediaType.APPLICATION_JSON))
-                .andDo(print())
+               // .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.data.students").exists())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.data.students[*].id").isNotEmpty());
@@ -87,7 +84,7 @@ public class StudentControllerTest {
         mockMvc.perform( MockMvcRequestBuilders
                 .get("/student/student-by-id/1")
                 .accept(MediaType.APPLICATION_JSON))
-                .andDo(print())
+              //  .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.data").exists())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.data.id").isNotEmpty());
