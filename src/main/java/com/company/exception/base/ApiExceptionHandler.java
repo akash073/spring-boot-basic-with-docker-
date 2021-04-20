@@ -8,7 +8,7 @@ import com.google.gson.GsonBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.HttpRequestMethodNotSupportedException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -26,6 +26,21 @@ public class ApiExceptionHandler {
 
         HttpStatus httpStatus = HttpStatus.OK;
         String message = exception.getMessage();
+
+        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.BAD_REQUEST,message);
+        Gson gson = new GsonBuilder().serializeNulls().create();
+        String jsonResponse = gson.toJson(errorResponse);
+        return ResponseEntity.status(httpStatus).contentType(MediaType.parseMediaType("application/json;charset=UTF-8")).body(jsonResponse);
+    }
+
+    @ResponseBody
+    @ExceptionHandler(value = MethodArgumentNotValidException.class)
+    public ResponseEntity<?> handleException(MethodArgumentNotValidException exception) {
+
+        HttpStatus httpStatus = HttpStatus.OK;
+
+        String message = exception.getBindingResult().getAllErrors().get(0).getDefaultMessage();
+       // String message = exception.getMessage();
 
         ErrorResponse errorResponse = new ErrorResponse(HttpStatus.BAD_REQUEST,message);
         Gson gson = new GsonBuilder().serializeNulls().create();

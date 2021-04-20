@@ -8,10 +8,12 @@ import com.company.repository.StudentRepository;
 import com.company.response.base.ArrayResponse;
 import com.company.response.base.SuccessResponse;
 import com.company.validation.CustomValidator;
+import com.company.validation.groups.UpdateOperation;
 import io.swagger.annotations.Api;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -48,7 +50,7 @@ public class StudentController {
     }
 
     @RequestMapping(path = "/save",method = RequestMethod.POST)
-    public SuccessResponse<Student> save(@RequestBody StudentDto studentDto) {
+    public SuccessResponse<Student> save(@RequestBody @Validated StudentDto studentDto) {
 
         Integer studentId = studentDto.getId();
 
@@ -76,13 +78,14 @@ public class StudentController {
     }
 
     @RequestMapping(path = "/update",method = RequestMethod.PUT)
-    public SuccessResponse<Student> update(@RequestBody StudentDto studentDto) {
-
+    public SuccessResponse<Student> update(@Validated({UpdateOperation.class}) @RequestBody StudentDto studentDto) {
+/*
         Integer studentId = studentDto.getId();
 
         if(studentId == null || studentId == 0){
             throw new ValidationException("StudentId can not be null");
-        }
+        }*/
+        Integer studentId = studentDto.getId();
 
         studentRepository.findById(studentId)
                 .orElseThrow(() -> new ValidationException(String.format("Student Id %s Not found",studentId) ));

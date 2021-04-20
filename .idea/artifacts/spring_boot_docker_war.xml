@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="spring-boot-docker.war">
+    <root id="archive" name="Springboot.war">
       <element id="artifact" artifact-name="spring-boot-docker:war exploded" />
     </root>
   </artifact>
