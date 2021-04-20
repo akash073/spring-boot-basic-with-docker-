@@ -1,6 +1,7 @@
-package com.cnsbd.bsp.api.v1.model;
+package com.company.dto;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -8,6 +9,7 @@ import java.io.Serializable;
 /**
  * Created by DELL on 31-Jul-19.
  */
+@Builder
 @Data
 public class LoginDto implements Serializable {
 
