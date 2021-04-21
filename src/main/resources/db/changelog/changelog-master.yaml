@@ -1,5 +1,0 @@
-databaseChangeLog:
-  - include:
-      file: db/student.yaml
-  - includeAll:
-      path: /db/seed
