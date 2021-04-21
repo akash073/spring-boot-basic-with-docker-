@@ -24,6 +24,9 @@ public class StudentDto implements Serializable {
     @ApiModelProperty(example = "akash073@gmail.com")
     private String email;
 
+
+    private String myCustomName;
+
 /*
     @ContactInfo(message = "Contact info is not correct")
     @NotNull
