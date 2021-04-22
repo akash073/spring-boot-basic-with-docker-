@@ -11,6 +11,7 @@ import com.company.validation.CustomValidator;
 import com.company.validation.groups.UpdateOperation;
 import io.swagger.annotations.Api;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.PropertyMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
@@ -32,6 +33,24 @@ public class StudentController {
     @Autowired
     ModelMapper modelMapper;
 
+    private PropertyMap<StudentDto, Student> studentFromDto =
+            new PropertyMap<StudentDto, Student>() {
+        protected void configure() {
+            //map().setId(source.getId());
+            map().setName(source.getName());
+            map().setEmail(source.getEmail());
+        }
+    };
+
+  /*  private PropertyMap<Student, StudentDto> dtoFormStudent =
+            new PropertyMap<Student, StudentDto>() {
+                protected void configure() {
+                    //map().setId(source.getId());
+                    map().setName(source.getName());
+                    map().setEmail(source.getEmail());
+                }
+            };*/
+
 
     @RequestMapping(path = "/list",method = RequestMethod.GET)
     public ArrayResponse<Student> list(){
@@ -51,24 +70,6 @@ public class StudentController {
 
     @RequestMapping(path = "/save",method = RequestMethod.POST)
     public SuccessResponse<Student> save(@RequestBody @Validated StudentDto studentDto) {
-
-        Integer studentId = studentDto.getId();
-
-
-        String name = studentDto.getName();
-        if(customValidator.nullOrEmpty(name)){
-            throw new ValidationException("Name is empty");
-        }
-
-        String mobileNumber = studentDto.getMobile();
-        if(!customValidator.mobileValidate(mobileNumber)){
-            throw new ValidationException("Mobile number is invalid");
-        }
-
-        String email = studentDto.getEmail();
-        if(!customValidator.emailValidate(email)){
-            throw new ValidationException("Email is invalid");
-        }
 
         Student student = modelMapper.map(studentDto,Student.class);
 

@@ -4,7 +4,13 @@
     <list default="true" id="3f73f49c-ba69-4b9b-9924-e622ac15beb6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dto/StudentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dto/StudentDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controller/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/converter/GenericConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/converter/GenericConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/exception/base/ApiExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/exception/base/ApiExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/repository/StudentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/StudentRepositoryCustom.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/repository/impl/StudentRepositoryCustomImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/company/controller/IndexControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/company/controller/IndexControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +123,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.data.extractors.current.id" value="SQL Inserts" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Java/spring-boot-online-resource/java-spring-security-example-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Java/spring-boot-online-resource/heimdall-master" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
     <property name="typescript.add.unambiguous.imports.on.the.fly" value="true" />
   </component>
@@ -145,7 +151,7 @@
       <recent name="$PROJECT_DIR$/src/test/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Main">
+  <component name="RunManager" selected="JUnit.IndexControllerTest.indexTest">
     <configuration name="IndexControllerTest.indexNotTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-boot-docker" />
       <extension name="coverage">
@@ -243,11 +249,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.IndexControllerTest.indexTest" />
         <item itemvalue="JUnit.IndexControllerTest.indexTest_RETURN_HELLO" />
         <item itemvalue="JUnit.StudentRepositoryTest.jpa_reposioty_test" />
         <item itemvalue="JUnit.IndexControllerTest.jpa_reposioty_test" />
         <item itemvalue="JUnit.IndexControllerTest.indexNotTest" />
-        <item itemvalue="JUnit.IndexControllerTest.indexTest" />
       </list>
     </recent_temporary>
   </component>
@@ -268,7 +274,8 @@
       <workItem from="1618721863863" duration="2308000" />
       <workItem from="1618804220913" duration="4735000" />
       <workItem from="1618888547696" duration="14835000" />
-      <workItem from="1618978939913" duration="5496000" />
+      <workItem from="1618978939913" duration="13690000" />
+      <workItem from="1619066937176" duration="547000" />
     </task>
     <task id="LOCAL-00001" summary="liquibase added">
       <created>1618565145099</created>
@@ -333,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618853272244</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Generic mapper added added">
+      <created>1619037280132</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1619037280132</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +365,8 @@
     <MESSAGE value="junit 5 added" />
     <MESSAGE value="Profiling added in maven" />
     <MESSAGE value="Flyway added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Flyway added" />
+    <MESSAGE value="Generic mapper added added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Generic mapper added added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="591" y="215" width="800" height="684" key="#Notifications" timestamp="1618586444260">
@@ -362,10 +377,10 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="575" y="376" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1618643321922" />
-    <state x="804" y="265" width="374" height="584" key="#com.intellij.ide.util.MemberChooser" timestamp="1618567168727">
+    <state x="804" y="265" width="374" height="584" key="#com.intellij.ide.util.MemberChooser" timestamp="1619034900792">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="804" y="265" width="374" height="584" key="#com.intellij.ide.util.MemberChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1618567168727" />
+    <state x="804" y="265" width="374" height="584" key="#com.intellij.ide.util.MemberChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1619034900792" />
     <state x="598" y="223" width="785" height="668" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1618309665054">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -374,70 +389,70 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="749" y="413" width="494" height="299" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/72.27.1848.1053@72.27.1848.1053" timestamp="1618566214913" />
-    <state x="754" y="298" key="#xdebugger.evaluate" timestamp="1619011916199">
+    <state x="754" y="298" key="#xdebugger.evaluate" timestamp="1619038724269">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="754" y="298" key="#xdebugger.evaluate/72.27.1848.1053@72.27.1848.1053" timestamp="1619011916199" />
-    <state x="508" y="125" width="966" height="863" key="CommitChangelistDialog2" timestamp="1618853272075">
+    <state x="754" y="298" key="#xdebugger.evaluate/72.27.1848.1053@72.27.1848.1053" timestamp="1619038724269" />
+    <state x="508" y="125" width="966" height="863" key="CommitChangelistDialog2" timestamp="1619037279974">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="508" y="125" width="966" height="863" key="CommitChangelistDialog2/72.27.1848.1053@72.27.1848.1053" timestamp="1618853272075" />
+    <state x="508" y="125" width="966" height="863" key="CommitChangelistDialog2/72.27.1848.1053@72.27.1848.1053" timestamp="1619037279974" />
     <state x="172" y="127" width="1648" height="853" key="DiffContextDialog" timestamp="1618641361718">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="172" y="127" width="1648" height="853" key="DiffContextDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1618641361718" />
-    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1618982178363">
+    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1619036181999">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1618982178363" />
-    <state width="1802" height="290" key="GridCell.Tab.0.bottom" timestamp="1619011606682">
+    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1619036181999" />
+    <state width="1802" height="267" key="GridCell.Tab.0.bottom" timestamp="1619040027289">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1619011606682" />
-    <state width="1802" height="290" key="GridCell.Tab.0.center" timestamp="1619011606681">
+    <state width="1802" height="267" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1619040027289" />
+    <state width="1802" height="267" key="GridCell.Tab.0.center" timestamp="1619040027289">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1619011606681" />
-    <state width="1802" height="290" key="GridCell.Tab.0.left" timestamp="1619011606681">
+    <state width="1802" height="267" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1619040027289" />
+    <state width="1802" height="267" key="GridCell.Tab.0.left" timestamp="1619040027288">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1619011606681" />
-    <state width="1802" height="290" key="GridCell.Tab.0.right" timestamp="1619011606682">
+    <state width="1802" height="267" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1619040027288" />
+    <state width="1802" height="267" key="GridCell.Tab.0.right" timestamp="1619040027289">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1619011606682" />
-    <state width="1802" height="290" key="GridCell.Tab.1.bottom" timestamp="1619011618441">
+    <state width="1802" height="267" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1619040027289" />
+    <state width="1802" height="290" key="GridCell.Tab.1.bottom" timestamp="1619040027285">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.1.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1619011618441" />
-    <state width="1802" height="290" key="GridCell.Tab.1.center" timestamp="1619011618441">
+    <state width="1802" height="290" key="GridCell.Tab.1.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1619040027285" />
+    <state width="1802" height="290" key="GridCell.Tab.1.center" timestamp="1619040027285">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.1.center/72.27.1848.1053@72.27.1848.1053" timestamp="1619011618441" />
-    <state width="1802" height="290" key="GridCell.Tab.1.left" timestamp="1619011618441">
+    <state width="1802" height="290" key="GridCell.Tab.1.center/72.27.1848.1053@72.27.1848.1053" timestamp="1619040027285" />
+    <state width="1802" height="290" key="GridCell.Tab.1.left" timestamp="1619040027285">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.1.left/72.27.1848.1053@72.27.1848.1053" timestamp="1619011618441" />
-    <state width="1802" height="290" key="GridCell.Tab.1.right" timestamp="1619011618441">
+    <state width="1802" height="290" key="GridCell.Tab.1.left/72.27.1848.1053@72.27.1848.1053" timestamp="1619040027285" />
+    <state width="1802" height="290" key="GridCell.Tab.1.right" timestamp="1619040027285">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.1.right/72.27.1848.1053@72.27.1848.1053" timestamp="1619011618441" />
-    <state width="1802" height="290" key="GridCell.Tab.2.bottom" timestamp="1619011606578">
+    <state width="1802" height="290" key="GridCell.Tab.1.right/72.27.1848.1053@72.27.1848.1053" timestamp="1619040027285" />
+    <state width="1802" height="290" key="GridCell.Tab.2.bottom" timestamp="1619038846925">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.2.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1619011606578" />
-    <state width="1802" height="290" key="GridCell.Tab.2.center" timestamp="1619011606577">
+    <state width="1802" height="290" key="GridCell.Tab.2.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1619038846925" />
+    <state width="1802" height="290" key="GridCell.Tab.2.center" timestamp="1619038846924">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.2.center/72.27.1848.1053@72.27.1848.1053" timestamp="1619011606577" />
-    <state width="1802" height="290" key="GridCell.Tab.2.left" timestamp="1619011606577">
+    <state width="1802" height="290" key="GridCell.Tab.2.center/72.27.1848.1053@72.27.1848.1053" timestamp="1619038846924" />
+    <state width="1802" height="290" key="GridCell.Tab.2.left" timestamp="1619038846924">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.2.left/72.27.1848.1053@72.27.1848.1053" timestamp="1619011606577" />
-    <state width="1802" height="290" key="GridCell.Tab.2.right" timestamp="1619011606578">
+    <state width="1802" height="290" key="GridCell.Tab.2.left/72.27.1848.1053@72.27.1848.1053" timestamp="1619038846924" />
+    <state width="1802" height="290" key="GridCell.Tab.2.right" timestamp="1619038846924">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.2.right/72.27.1848.1053@72.27.1848.1053" timestamp="1619011606578" />
+    <state width="1802" height="290" key="GridCell.Tab.2.right/72.27.1848.1053@72.27.1848.1053" timestamp="1619038846924" />
     <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1618581927262">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -468,7 +483,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/company/controller/IndexControllerTest.java</url>
-          <line>32</line>
+          <line>44</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -482,9 +497,14 @@
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/company/exception/base/GlobalExceptionController.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/company/controller/IndexController.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="17" />
+          <line>33</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  * Created by DELL on 22-Jul-19.
  */
 //@RestControllerAdvice(basePackages ={"com.cnsbd.bsp.api.login","com.cnsbd.bsp.api.v1"})
-@RestControllerAdvice(basePackages ={"com.company.controller"})
+@RestControllerAdvice(basePackages ={"com.company.controller","com.company.service","com.company.repository"})
 public class ApiExceptionHandler {
 
     @ResponseBody
@@ -37,7 +37,7 @@ public class ApiExceptionHandler {
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
     public ResponseEntity<?> handleException(MethodArgumentNotValidException exception) {
 
-        HttpStatus httpStatus = HttpStatus.OK;
+        //HttpStatus httpStatus =
 
         String message = exception.getBindingResult().getAllErrors().get(0).getDefaultMessage();
        // String message = exception.getMessage();
@@ -45,7 +45,7 @@ public class ApiExceptionHandler {
         ErrorResponse errorResponse = new ErrorResponse(HttpStatus.BAD_REQUEST,message);
         Gson gson = new GsonBuilder().serializeNulls().create();
         String jsonResponse = gson.toJson(errorResponse);
-        return ResponseEntity.status(httpStatus).contentType(MediaType.parseMediaType("application/json;charset=UTF-8")).body(jsonResponse);
+        return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.parseMediaType("application/json;charset=UTF-8")).body(jsonResponse);
     }
 
     /*@ResponseBody

@@ -1,8 +1,8 @@
 package com.company.controller;
 
+import com.company.converter.GenericConverter;
 import com.company.dto.LoginDto;
 import com.company.entity.Student;
-import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -16,11 +16,9 @@ public class IndexController {
     @Autowired
     private MessageSource messageSource;
 
-    @Autowired
-    private ModelMapper modelMapper;
 
 
-    private PropertyMap<LoginDto, Student> studentFromLoginDtoConverter = new PropertyMap<LoginDto, Student>() {
+    public PropertyMap<LoginDto, Student> studentFromLoginDtoConverter = new PropertyMap<LoginDto, Student>() {
         protected void configure() {
             //map().setId(source.getId());
             map().setName(source.getLoginName());
@@ -35,11 +33,12 @@ public class IndexController {
 
         LoginDto loginDto = LoginDto.builder()
                 .loginName("akashn").password("passeord")
+
                 .build();
 
-        Student student =
-                modelMapper.addMappings(studentFromLoginDtoConverter).map(loginDto);
 
+        Student student =
+                GenericConverter.mapper(loginDto,Student.class,studentFromLoginDtoConverter);
 
         //LoginDto test = modelMapper.addMappings(studentFromLoginDtoConverter).map(student);
 
