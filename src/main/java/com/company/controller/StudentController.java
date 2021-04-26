@@ -62,15 +62,15 @@ public class StudentController {
         return new SuccessResponse<>(savedStudent,MessageEnum.SAVE_SUCCESSFULLY.getValue());
     }
 
-    @RequestMapping(path = "/update",method = RequestMethod.PUT)
-    public SuccessResponse<Student> update(@Validated({UpdateOperation.class}) @RequestBody StudentDto studentDto) {
+    @RequestMapping(path = "/update/{studentId}",method = RequestMethod.PUT)
+    public SuccessResponse<Student> update(@RequestParam Integer studentId,@Validated({UpdateOperation.class}) @RequestBody StudentDto studentDto) {
 /*
         Integer studentId = studentDto.getId();
 
         if(studentId == null || studentId == 0){
             throw new ValidationException("StudentId can not be null");
         }*/
-        Integer studentId = studentDto.getId();
+       // Integer studentId = studentDto.getId();
 
         studentRepository.findById(studentId)
                 .orElseThrow(() -> new ValidationException(String.format("Student Id %s Not found",studentId) ));
