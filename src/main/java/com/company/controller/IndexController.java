@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Locale;
 
 @RestController
@@ -18,7 +19,7 @@ public class IndexController {
 
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
-    public String index(@RequestHeader(name = "Accept-Language", required = false, defaultValue = "fr") String localeString) {
+    public String index(@RequestHeader(name = "Accept-Language", required = false, defaultValue = "fr") String localeString, HttpServletRequest httpServletRequest) {
         // List<Student> students = studentRepository.findAll();
 
         LoginDto loginDto = LoginDto.builder()
