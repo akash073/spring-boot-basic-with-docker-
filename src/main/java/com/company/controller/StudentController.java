@@ -9,11 +9,7 @@ import com.company.response.base.ArrayResponse;
 import com.company.response.base.SuccessResponse;
 import com.company.validation.CustomValidator;
 import com.company.validation.groups.UpdateOperation;
-import io.swagger.annotations.Api;
-import org.modelmapper.ModelMapper;
-import org.modelmapper.PropertyMap;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +17,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/student")
-@Api(value = "student", produces = MediaType.APPLICATION_JSON_VALUE, tags = {"student-details"}, description = "Student info")
 public class StudentController {
 
     @Autowired
@@ -30,17 +25,6 @@ public class StudentController {
     @Autowired
     CustomValidator customValidator;
 
-    @Autowired
-    ModelMapper modelMapper;
-
-    private PropertyMap<StudentDto, Student> studentFromDto =
-            new PropertyMap<StudentDto, Student>() {
-        protected void configure() {
-            //map().setId(source.getId());
-            map().setName(source.getName());
-            map().setEmail(source.getEmail());
-        }
-    };
 
   /*  private PropertyMap<Student, StudentDto> dtoFormStudent =
             new PropertyMap<Student, StudentDto>() {
@@ -71,9 +55,9 @@ public class StudentController {
     @RequestMapping(path = "/save",method = RequestMethod.POST)
     public SuccessResponse<Student> save(@RequestBody @Validated StudentDto studentDto) {
 
-        Student student = modelMapper.map(studentDto,Student.class);
+     //   Student student = modelMapper.map(studentDto,Student.class);
 
-        Student savedStudent = studentRepository.save(student);
+        Student savedStudent = null;//studentRepository.save(student);
 
         return new SuccessResponse<>(savedStudent,MessageEnum.SAVE_SUCCESSFULLY.getValue());
     }
@@ -91,9 +75,9 @@ public class StudentController {
         studentRepository.findById(studentId)
                 .orElseThrow(() -> new ValidationException(String.format("Student Id %s Not found",studentId) ));
 
-        Student updatedStudent = modelMapper.map(studentDto,Student.class);
+        Student updatedStudent = null;// modelMapper.map(studentDto,Student.class);
 
-        studentRepository.save(updatedStudent);
+       // studentRepository.save(updatedStudent);
 
 
         return new SuccessResponse<>(updatedStudent,MessageEnum.UPDATE_SUCCESSFULLY.getValue());

@@ -4,11 +4,8 @@ package com.company.controller;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
@@ -26,8 +23,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class IndexControllerTest {
 
 
-    @MockBean
-    private ModelMapper modelMapper;
+    /*@MockBean
+    private ModelMapper modelMapper;*/
 
 
     @Autowired
@@ -35,8 +32,8 @@ public class IndexControllerTest {
 
     @Before
     public void setupMock() {
-        Mockito.when(modelMapper)
-                .thenReturn(new ModelMapper());
+        /*Mockito.when(modelMapper)
+                .thenReturn(new ModelMapper());*/
     }
 
     @Test

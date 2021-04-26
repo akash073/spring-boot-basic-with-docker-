@@ -1,6 +1,5 @@
 package com.company.config;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,12 +15,6 @@ import java.util.Locale;
 @Configuration
 public class ProjectConfig {
 
-    @Bean
-    public ModelMapper modelMapper(){
-        ModelMapper modelMapper = new ModelMapper();
-        modelMapper.getConfiguration().setAmbiguityIgnored(true);
-        return modelMapper;
-    }
     //https://stackoverflow.com/questions/38243065/springboot-how-to-set-order-of-filter-without-annotation/38464070#38464070
     @Bean
     public FilterRegistrationBean corsFilter() {
@@ -55,4 +48,5 @@ public class ProjectConfig {
         messageSource.setUseCodeAsDefaultMessage(true);
         return messageSource;
     }
+
 }

@@ -1,7 +1,7 @@
 package com.company.dto;
 
 import com.company.validation.groups.UpdateOperation;
-import io.swagger.annotations.ApiModelProperty;
+
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
@@ -15,13 +15,12 @@ public class StudentDto implements Serializable {
 
     @Positive(groups = UpdateOperation.class,message = "Id can not be blank for update")
     private Integer id;
-    @ApiModelProperty(example = "akash")
     @NotNull
     @NotBlank(message = "Name can not be blank")
     private String name;
-    @ApiModelProperty(example = "01719461643")
+    //@ApiModelProperty(example = "01719461643")
     private String mobile;
-    @ApiModelProperty(example = "akash073@gmail.com")
+    //@ApiModelProperty(example = "akash073@gmail.com")
     private String email;
 
 

@@ -7,7 +7,7 @@ import com.company.repository.StudentRepository;
 import com.company.validation.CustomValidator;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import org.modelmapper.ModelMapper;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -37,8 +37,6 @@ public class StudentControllerTest {
     @MockBean
     CustomValidator customValidator;
 
-    @MockBean
-    ModelMapper modelMapper;
 
 
 

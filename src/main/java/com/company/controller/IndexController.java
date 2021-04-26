@@ -1,9 +1,6 @@
 package com.company.controller;
 
-import com.company.converter.GenericConverter;
 import com.company.dto.LoginDto;
-import com.company.entity.Student;
-import org.modelmapper.PropertyMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.web.bind.annotation.*;
@@ -18,17 +15,10 @@ public class IndexController {
 
 
 
-    public PropertyMap<LoginDto, Student> studentFromLoginDtoConverter = new PropertyMap<LoginDto, Student>() {
-        protected void configure() {
-            //map().setId(source.getId());
-            map().setName(source.getLoginName());
-            map().setEmail(source.getPassword());
-        }
-    };
 
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
-    public String index() {
+    public String index(@RequestHeader(name = "Accept-Language", required = false, defaultValue = "fr") String localeString) {
         // List<Student> students = studentRepository.findAll();
 
         LoginDto loginDto = LoginDto.builder()
@@ -37,13 +27,21 @@ public class IndexController {
                 .build();
 
 
+
+/*
+
         Student student =
                 GenericConverter.mapper(loginDto,Student.class,studentFromLoginDtoConverter);
+
+        if(student !=null){
+            throw new ValidationException("good.morning.message");
+        }
+*/
 
         //LoginDto test = modelMapper.addMappings(studentFromLoginDtoConverter).map(student);
 
 
-        System.out.println(student);
+//        System.out.println(student);
         return "index";
     }
 
