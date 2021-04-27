@@ -16,7 +16,8 @@ public class StudentDto implements Serializable {
     @NotNull
     @NotBlank(message = "Name can not be blank")
     private String name;
-    //@ApiModelProperty(example = "01719461643")
+    @Schema(description = "Phone number of the contact.", example = "62482211")
+   // @Pattern(regexp ="^\\+?[0-9. ()-]{7,25}$", message = "Phone number")
     private String mobile;
     //@ApiModelProperty(example = "akash073@gmail.com")
     @Schema(example = "akash073@gmail.com")

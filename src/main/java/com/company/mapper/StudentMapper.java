@@ -1,4 +1,4 @@
-package com.company.converter;
+package com.company.mapper;
 
 import com.company.dto.StudentDto;
 import com.company.entity.Student;
