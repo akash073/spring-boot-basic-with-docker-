@@ -22,7 +22,7 @@ import java.util.Locale;
  * Created by DELL on 22-Jul-19.
  */
 //@RestControllerAdvice(basePackages ={"com.cnsbd.bsp.api.login","com.cnsbd.bsp.api.v1"})
-@RestControllerAdvice(basePackages ={"com.company.controller","com.company.service","com.company.repository"})
+@RestControllerAdvice(basePackages ={"com.company.controller", "com.company.service" ,"com.company.repository"})
 public class ApiExceptionHandler {
 
 /*    @Autowired

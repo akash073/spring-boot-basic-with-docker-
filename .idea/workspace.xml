@@ -2,10 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f73f49c-ba69-4b9b-9924-e622ac15beb6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/dto/GenericClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/response/base/ListResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/serurity/config/CustomJwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/serurity/config/CustomUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/serurity/config/JwtAuthenticationEntryPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/serurity/config/JwtUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/serurity/config/SpringSecurityConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/serurity/controller/AuthenticationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/serurity/controller/ResourceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/serurity/model/AuthenticationRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/serurity/model/AuthenticationResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/serurity/model/DAOUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/serurity/model/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/company/serurity/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1_1_2__user.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/suppressions.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-docker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-docker.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/converter/StudentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/mapper/StudentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/dto/StudentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/dto/StudentDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/controller/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/exception/base/ApiExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/exception/base/ApiExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/mapper/StudentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/mapper/StudentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/response/base/ArrayResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/response/base/SuccessResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/response/base/SuccessResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,6 +78,13 @@
         <item name="local@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="local: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="local@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="local: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -119,33 +147,34 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.data.extractors.current.id" value="SQL Inserts" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Java/spring-boot-online-resource/java-spring-security-example-master" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/db/migration" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="org.infernus.idea.checkstyle.CheckStyleConfigurable" />
     <property name="typescript.add.unambiguous.imports.on.the.fly" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.company.controller" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/company/repository" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/company/dto" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/company/config" />
-      <recent name="$PROJECT_DIR$/src/test/resources" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.company.config" />
-      <recent name="com.company.exception" />
-      <recent name="com.company.service" />
-      <recent name="com.company.entity" />
-      <recent name="com.company.controller" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/db/migration" />
       <recent name="$PROJECT_DIR$/src/test/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources/db/seed" />
       <recent name="$PROJECT_DIR$/src/main/resources/db/changelog" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.company.controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.company.serurity.controller" />
+      <recent name="com.company.serurity.repository" />
+      <recent name="com.company.config" />
+      <recent name="com.company.exception" />
+      <recent name="com.company.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/db/migration" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/company/serurity/model" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/company/serurity" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/company/repository" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Main">
@@ -277,7 +306,11 @@
       <workItem from="1619413460920" duration="4575000" />
       <workItem from="1619424339918" duration="4000" />
       <workItem from="1619424357819" duration="9719000" />
-      <workItem from="1619511635247" duration="1910000" />
+      <workItem from="1619511635247" duration="2556000" />
+      <workItem from="1619668270465" duration="958000" />
+      <workItem from="1619669250298" duration="6144000" />
+      <workItem from="1619777304010" duration="5763000" />
+      <workItem from="1619792724388" duration="4571000" />
     </task>
     <task id="LOCAL-00001" summary="liquibase added">
       <created>1618565145099</created>
@@ -349,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619037280132</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Generic mapper added added">
+      <created>1619710082598</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1619710082599</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,14 +431,18 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="749" y="413" width="494" height="299" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/72.27.1848.1053@72.27.1848.1053" timestamp="1618566214913" />
-    <state x="754" y="298" width="942" height="780" key="#xdebugger.evaluate" timestamp="1619426967645">
+    <state x="895" y="300" width="942" height="780" key="#xdebugger.evaluate" timestamp="1619793959745">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="754" y="298" width="942" height="780" key="#xdebugger.evaluate/72.27.1848.1053@72.27.1848.1053" timestamp="1619426967645" />
-    <state x="508" y="125" width="966" height="863" key="CommitChangelistDialog2" timestamp="1619037279974">
+    <state x="895" y="300" width="942" height="780" key="#xdebugger.evaluate/72.27.1848.1053@72.27.1848.1053" timestamp="1619793959745" />
+    <state x="731" y="400" width="520" height="314" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1619669508423">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="508" y="125" width="966" height="863" key="CommitChangelistDialog2/72.27.1848.1053@72.27.1848.1053" timestamp="1619037279974" />
+    <state x="731" y="400" width="520" height="314" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/72.27.1848.1053@72.27.1848.1053" timestamp="1619669508423" />
+    <state x="508" y="125" width="966" height="863" key="CommitChangelistDialog2" timestamp="1619710082428">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="508" y="125" width="966" height="863" key="CommitChangelistDialog2/72.27.1848.1053@72.27.1848.1053" timestamp="1619710082428" />
     <state x="172" y="127" width="1648" height="853" key="DiffContextDialog" timestamp="1618641361718">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -407,70 +451,70 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1619415368891" />
-    <state width="1802" height="290" key="GridCell.Tab.0.bottom" timestamp="1619462629122">
+    <state width="1802" height="290" key="GridCell.Tab.0.bottom" timestamp="1619796418162">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1619462629122" />
-    <state width="1802" height="290" key="GridCell.Tab.0.center" timestamp="1619462629122">
+    <state width="1802" height="290" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1619796418162" />
+    <state width="1802" height="290" key="GridCell.Tab.0.center" timestamp="1619796418161">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1619462629122" />
-    <state width="1802" height="290" key="GridCell.Tab.0.left" timestamp="1619462629122">
+    <state width="1802" height="290" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1619796418161" />
+    <state width="1802" height="290" key="GridCell.Tab.0.left" timestamp="1619796418161">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1619462629122" />
-    <state width="1802" height="290" key="GridCell.Tab.0.right" timestamp="1619462629122">
+    <state width="1802" height="290" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1619796418161" />
+    <state width="1802" height="290" key="GridCell.Tab.0.right" timestamp="1619796418162">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1619462629122" />
-    <state width="1802" height="290" key="GridCell.Tab.1.bottom" timestamp="1619462629123">
+    <state width="1802" height="290" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1619796418162" />
+    <state width="1802" height="290" key="GridCell.Tab.1.bottom" timestamp="1619796429148">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.1.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1619462629123" />
-    <state width="1802" height="290" key="GridCell.Tab.1.center" timestamp="1619462629123">
+    <state width="1802" height="290" key="GridCell.Tab.1.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1619796429148" />
+    <state width="1802" height="290" key="GridCell.Tab.1.center" timestamp="1619796429147">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.1.center/72.27.1848.1053@72.27.1848.1053" timestamp="1619462629123" />
-    <state width="1802" height="290" key="GridCell.Tab.1.left" timestamp="1619462629123">
+    <state width="1802" height="290" key="GridCell.Tab.1.center/72.27.1848.1053@72.27.1848.1053" timestamp="1619796429147" />
+    <state width="1802" height="290" key="GridCell.Tab.1.left" timestamp="1619796429147">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.1.left/72.27.1848.1053@72.27.1848.1053" timestamp="1619462629123" />
-    <state width="1802" height="290" key="GridCell.Tab.1.right" timestamp="1619462629123">
+    <state width="1802" height="290" key="GridCell.Tab.1.left/72.27.1848.1053@72.27.1848.1053" timestamp="1619796429147" />
+    <state width="1802" height="290" key="GridCell.Tab.1.right" timestamp="1619796429148">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.1.right/72.27.1848.1053@72.27.1848.1053" timestamp="1619462629123" />
-    <state width="1802" height="290" key="GridCell.Tab.2.bottom" timestamp="1619462629124">
+    <state width="1802" height="290" key="GridCell.Tab.1.right/72.27.1848.1053@72.27.1848.1053" timestamp="1619796429148" />
+    <state width="1802" height="290" key="GridCell.Tab.2.bottom" timestamp="1619796417970">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.2.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1619462629124" />
-    <state width="1802" height="290" key="GridCell.Tab.2.center" timestamp="1619462629123">
+    <state width="1802" height="290" key="GridCell.Tab.2.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1619796417970" />
+    <state width="1802" height="290" key="GridCell.Tab.2.center" timestamp="1619796417970">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.2.center/72.27.1848.1053@72.27.1848.1053" timestamp="1619462629123" />
-    <state width="1802" height="290" key="GridCell.Tab.2.left" timestamp="1619462629123">
+    <state width="1802" height="290" key="GridCell.Tab.2.center/72.27.1848.1053@72.27.1848.1053" timestamp="1619796417970" />
+    <state width="1802" height="290" key="GridCell.Tab.2.left" timestamp="1619796417970">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.2.left/72.27.1848.1053@72.27.1848.1053" timestamp="1619462629123" />
-    <state width="1802" height="290" key="GridCell.Tab.2.right" timestamp="1619462629123">
+    <state width="1802" height="290" key="GridCell.Tab.2.left/72.27.1848.1053@72.27.1848.1053" timestamp="1619796417970" />
+    <state width="1802" height="290" key="GridCell.Tab.2.right" timestamp="1619796417970">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="1802" height="290" key="GridCell.Tab.2.right/72.27.1848.1053@72.27.1848.1053" timestamp="1619462629123" />
-    <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1619424392665">
+    <state width="1802" height="290" key="GridCell.Tab.2.right/72.27.1848.1053@72.27.1848.1053" timestamp="1619796417970" />
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1619709096525">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1619424392665" />
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1619709096525" />
     <state width="924" height="526" key="XDebugger.FullValuePopup" timestamp="1618853964168">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="924" height="526" key="XDebugger.FullValuePopup/72.27.1848.1053@72.27.1848.1053" timestamp="1618853964168" />
-    <state x="799" y="428" width="384" height="258" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1618902338741">
+    <state x="799" y="428" width="384" height="258" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1619711128757">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="799" y="428" width="384" height="258" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/72.27.1848.1053@72.27.1848.1053" timestamp="1618902338741" />
-    <state x="641" y="163" width="710" height="780" key="find.popup" timestamp="1618911164767">
+    <state x="799" y="428" width="384" height="258" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/72.27.1848.1053@72.27.1848.1053" timestamp="1619711128757" />
+    <state x="641" y="163" width="710" height="780" key="find.popup" timestamp="1619712004748">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="641" y="163" width="710" height="780" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1618911164767" />
+    <state x="641" y="163" width="710" height="780" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1619712004748" />
     <state x="660" y="252" key="run.anything.popup" timestamp="1619421476541">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -504,18 +548,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/company/controller/IndexController.java</url>
-          <line>79</line>
+          <line>94</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/company/controller/IndexController.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="21" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/company/dto/GenericClass.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/company/dto/StudentDto.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="22" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/company/dto/GenericClass.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/company/dto/GenericClass.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/company/controller/StudentController.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

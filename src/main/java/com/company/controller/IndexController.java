@@ -1,9 +1,10 @@
 package com.company.controller;
 
-import com.company.mapper.StudentMapper;
 import com.company.dto.LoginDto;
 import com.company.dto.StudentDto;
 import com.company.entity.Student;
+import com.company.mapper.StudentMapper;
+import com.company.response.base.SuccessResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -16,9 +17,11 @@ import org.springframework.context.MessageSource;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
-/*
-* https://www.dariawan.com/tutorials/spring/documenting-spring-boot-rest-api-springdoc-openapi-3/
+/**
+ * https://www.dariawan.com/tutorials/spring/documenting-spring-boot-rest-api-springdoc-openapi-3/
 * */
 @RestController
 @RequiredArgsConstructor
@@ -39,7 +42,7 @@ public class IndexController {
                     content = @Content(array = @ArraySchema(schema = @Schema(implementation = StudentDto.class)))) })
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
-    public String index(@RequestHeader(name = "Accept-Language", required = false, defaultValue = "fr") String localeString, HttpServletRequest httpServletRequest) {
+    public SuccessResponse<Student> index(@RequestHeader(name = "Accept-Language", required = false, defaultValue = "fr") String localeString, HttpServletRequest httpServletRequest) {
         // List<Student> students = studentRepository.findAll();
 
 
@@ -58,21 +61,33 @@ public class IndexController {
 
 
 
-/*
 
-        Student student =
-                GenericConverter.mapper(loginDto,Student.class,studentFromLoginDtoConverter);
 
-        if(student !=null){
+        int i = 0;
+
+
+       /* if(student !=null){
             throw new ValidationException("good.morning.message");
-        }
-*/
+        }*/
+
 
         //LoginDto test = modelMapper.addMappings(studentFromLoginDtoConverter).map(student);
 
 
 //        System.out.println(student);
-        return "index";
+
+       // GenericClass genericClass = new GenericClass(student);
+
+        List<Student> students = Arrays.asList(student);
+        //List<Student> students = new ArrayList<>();
+
+        //return new GenericClass<List<Student>>(students,Student.class);
+
+        Student emTy = new Student();
+
+       // return new ListResponse<List<Student>>(students,Student.class,"My message");
+
+        return new SuccessResponse<Student>(student);
     }
 
     @RequestMapping(path = "/index", method = RequestMethod.GET)

@@ -9,9 +9,12 @@ import org.mapstruct.Mappings;
 @Mapper(componentModel = "spring")
 public interface StudentMapper {
 
- @Mappings({
-         //@Mapping(target="employeeId", source="entity.id"),
-         @Mapping(target="myCustomName", source="student.name")
- })
-  StudentDto getEntityFromModel(Student student);
+    @Mappings({
+            //@Mapping(target="employeeId", source="entity.id"),
+            @Mapping(target = "myCustomName", source = "student.name")
+    })
+    StudentDto getEntityFromModel(Student student);
+    Student getStudent(StudentDto studentDto);
+
+
 }
